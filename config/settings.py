@@ -25,14 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Third-party
-    'allauth',
-    'allauth.account',
     'crispy_forms',
     'debug_toolbar',
 
     # Local
     'accounts',
     'pages',
+    'snacks',
 ]
 
 # MIDDLEWARE
@@ -159,15 +158,5 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = 'home'
 # https://django-allauth.readthedocs.io/en/latest/views.html#logout-account-logout
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
-# https://django-allauth.readthedocs.io/en/latest/installation.html?highlight=backends
-AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-)
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
